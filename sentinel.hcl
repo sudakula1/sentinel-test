@@ -1,4 +1,7 @@
 
+import "module" "gcp-functions" {
+    source = "./gcp-functions/gcp-functions.sentinel"
+}
 
 policy "enforce-mandatory-labels" {
     source = "./IAM/enforce-mandatory-labels.sentinel"
