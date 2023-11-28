@@ -14,7 +14,7 @@ param resource_types default [
   "google_project",
   "google_compute_instance",
   "google_storage_bucket",
-  "google_service_account"
+  "google_service_account",
 ]
 
 # List of mandatory labels
