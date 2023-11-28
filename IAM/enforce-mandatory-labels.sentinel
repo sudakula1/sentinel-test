@@ -6,7 +6,7 @@
 
 # Import common-functions/tfplan-functions/tfplan-functions.sentinel
 # with alias "plan"
-import "tfplan-functions" as plan
+import "tfplan/v2" as plan
 
 # List of mandatory labels
 mandatory_labels = ["name", "ttl", "owner"]
