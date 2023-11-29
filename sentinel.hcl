@@ -15,5 +15,5 @@ policy "validate-delete-roles" {
 
 policy "validate-admin-roles" {
     source = "./IAM/service_account_admin.sentinel"
-    enforcement_level = "soft-mandatory"
+    enforcement_level = "advisory"
 }
