@@ -3,7 +3,7 @@
 
 # Import common-functions/tfplan-functions/tfplan-functions.sentinel
 # with alias "plan"
-import "tfplan/v2" as plan
+import "tfplan" as plan
 
 # Import gcp-functions/gcp-functions.sentinel
 # with alias "gcp"
