@@ -17,3 +17,12 @@ find_resources_with_standard_labels = func(resource_types) {
 
   return resources
 }
+
+
+gcpRolesWithAdmin=func(resources){
+  for resources as address, rc{
+    rc.change.actions contains "create" and
+    (rc.after.role contains "admin" or rc.after.role contains "Admin")
+  }
+  return resources
+}
