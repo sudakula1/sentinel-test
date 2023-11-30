@@ -25,11 +25,15 @@ gcpRolesWithAdmin=func(resources){
   for resources as address, rc{
     print(rc)
     if rc.change.actions is "create" {
-      rc.change.after.role contains "admin" or rc.change.after.role contains "Admin"
-      message = to_string(address) + "has" + to_string(rc.change.after.role)
-      violators[address] = rc
-      messages[address] = message
-      print(message)
+      print ("inside")
+      if rc.change.after.role contains "admin" or rc.change.after.role contains "Admin" {
+        print("inside change admin")
+        message = to_string(address) + "has" + to_string(rc.change.after.role)
+        violators[address] = rc
+        messages[address] = message
+        print(message)
+      }
+
     }
 
   }
