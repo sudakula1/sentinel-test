@@ -27,10 +27,8 @@ gcpRolesWithAdmin=func(resources){
   messages = {}
   for resources as address, rc{
     if rc.change.actions contains "create" {
-      print ("inside")
       if rc.change.after.role contains "admin" or rc.change.after.role contains "Admin" {
-        print("inside change admin")
-        message = plan.to_string(rc.address) + "has " + plan.to_string(rc.change.after.role)
+        message = plan.to_string(rc.address) + " -has- " + plan.to_string(rc.change.after.role)
         violators[address] = rc.address
         messages[address] = message
         print(message)
@@ -39,5 +37,5 @@ gcpRolesWithAdmin=func(resources){
     }
 
   }
-  return {"resources":violators,"messages":messages}
+  return {"messages":message}
 }
