@@ -20,9 +20,18 @@ find_resources_with_standard_labels = func(resource_types) {
 
 
 gcpRolesWithAdmin=func(resources){
+  violators = {}
+  messages = {}
   for resources as address, rc{
-    rc.change.actions contains "create" and
-    (rc.after.role contains "admin" or rc.after.role contains "Admin")
+
+    if rc.change.actions is "create" {
+      rc.after.role contains "admin" or rc.after.role contains "Admin"
+      message = to_string(address) + "has" + to_string(rc.after.role)
+      violators[address] = rc
+      messages[address] = message
+      print(message)
+    }
+
   }
-  return resources
+  return {"resources":violators,"messages":messages}
 }
