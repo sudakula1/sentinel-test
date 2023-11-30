@@ -2,6 +2,8 @@
 
 ##### Imports #####
 import "tfplan/v2" as tfplan
+import "strings"
+import "types"
 
 ##### Functions #####
 
